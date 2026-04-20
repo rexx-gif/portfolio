@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Septiyan Bintang — Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <!-- Cursor -->
+    <div class="cur-ring" id="curRing"></div>
+    <div class="cur-dot" id="curDot"></div>
+
+    <!-- Loader -->
+    <div class="loader" id="loader">
+        <div class="loader-inner">
+            <div class="loader-logo-svg">
+                <svg width="60" height="60" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="50" cy="50" r="48" stroke="currentColor" stroke-width="0.5" stroke-dasharray="4 4" />
+                    <path d="M50 20L80 70H20L50 20Z" fill="currentColor" class="logo-path" />
+                    <circle cx="50" cy="50" r="12" fill="var(--bg)" stroke="currentColor" stroke-width="1" />
+                </svg>
+            </div>
+            <div class="loader-progress-wrap">
+                <div class="loader-bar">
+                    <div class="loader-fill" id="loaderFill"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating nav -->
+    <nav id="nav">
+        <a href="#" class="nav-wordmark"><span></span></a>
+        <div class="nav-links">
+            <a href="#about" data-label="About">About</a>
+            <a href="#skills" data-label="Skills">Skills</a>
+            <a href="#projects" data-label="Work">Work</a>
+            <a href="#certs" data-label="Awards">Awards</a>
+        </div>
+        <div class="nav-btns">
+            <a href="#contact" class="nav-cta">
+                <span>Hire Me</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M7 17L17 7M7 7h10v10" />
+                </svg>
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Menu">
+                <span class="t-line"></span>
+                <span class="t-line"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ═══════════════════ HERO ═══════════════════ -->
+    <section id="hero">
+        <!-- BG blobs -->
+        <div class="h-blob h-blob1"></div>
+        <div class="h-blob h-blob2"></div>
+        <div class="h-blob h-blob3"></div>
+
+        <!-- Marquee tape -->
+        <div class="tape tape-top">
+            <div class="tape-inner">
+                <span>WEB DEVELOPER</span><span class="tape-star">✦</span>
+                <span>UI DESIGNER</span><span class="tape-star">✦</span>
+                <span>SMK RPL</span><span class="tape-star">✦</span>
+                <span>AVAILABLE FOR INTERNSHIP</span><span class="tape-star">✦</span>
+                <span>WEB DEVELOPER</span><span class="tape-star">✦</span>
+                <span>UI DESIGNER</span><span class="tape-star">✦</span>
+                <span>SMK RPL</span><span class="tape-star">✦</span>
+                <span>AVAILABLE FOR INTERNSHIP</span><span class="tape-star">✦</span>
+            </div>
+        </div>
+
+        <div class="hero-grid">
+            <!-- Left col: name + text -->
+            <div class="hero-left">
+                <div class="avail-pill">
+                    <span class="avail-dot"></span>
+                    Open to Opportunities
+                </div>
+                <h1 class="hero-h1">
+                    <span class="h1-line" data-reveal>Septiyan</span>
+                    <span class="h1-line h1-stroke" data-reveal>Bintang</span>
+                    <span class="h1-line" data-reveal>Ramadhan</span>
+                    <span class="h1-line" data-reveal>Putra</span>
+                </h1>
+                <p class="hero-sub" data-reveal>
+                    Siswa SMK yang membangun antarmuka digital — menyatukan kode yang bersih dengan desain yang
+                    bernyawa.
+                </p>
+                <div class="hero-actions" data-reveal>
+                    <a href="#projects" class="btn-main">
+                        <span>Lihat Karya</span>
+                        <div class="btn-circle">→</div>
+                    </a>
+                    <a href="#" class="btn-outline" id="cvBtn">Download CV</a>
+                </div>
+            </div>
+
+            <!-- Right col: photo + floating chips -->
+            <div class="hero-right">
+                <div class="photo-wrap" data-reveal>
+                    <div class="photo-frame">
+                        <!-- Replace src with real photo -->
+                        <img src="../images/foto.jpg" alt="Septiyan Bintang" class="photo-img" id="profilePhoto">
+                        <div class="photo-ring-outer"></div>
+                    </div>
+                    <!-- Floating chips -->
+                    <div class="chip chip1">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="#f59e0b">
+                            <path
+                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                        </svg>
+                        12+ Projects
+                    </div>
+                    <div class="chip chip2">⚡ Frontend Dev</div>
+                    <div class="chip chip3">
+                        <span class="chip-dot"></span>
+                        Bondowoso, ID
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Diagonal divider -->
+        <div class="hero-diag"></div>
+    </section>
+
+    <!-- ═══════════════════ ABOUT ═══════════════════ -->
+    <section id="about">
+        <div class="about-layout">
+
+            <!-- Bento card 1: Intro -->
+            <div class="bento bento-intro reveal">
+                <div class="bento-tag">{ bio }</div>
+                <p class="bento-big-text">
+                    Halo! Saya <em>Septiyan Bintang</em>, siswa <strong>RPL</strong> di SMKN 1 Bondowoso
+                    yang gemar membangun antarmuka web yang terasa hidup. Bagi saya, kode yang baik bukan
+                    hanya yang berjalan — tapi yang juga <em>terasa</em> oleh penggunanya.
+                </p>
+                <div class="about-quote">
+                    <div class="quote-mark">"</div>
+                    <p>Saya tidak hanya belajar coding — saya belajar cara berpikir seperti seorang engineer.</p>
+                </div>
+                <div class="about-tags">
+                    <span>🎯 Fokus: Frontend & Backend</span>
+                    <span>📍 Bondowoso, Jawa Timur</span>
+                    <span>🔍 Open to Internship</span>
+                </div>
+            </div>
+
+            <!-- Bento card 2: Passion -->
+            <div class="bento bento-passion reveal" style="--d:.1s">
+                <div class="bento-tag">{ passion }</div>
+                <div class="passion-list">
+                    <div class="passion-item">
+                        <span class="passion-emoji">🌐</span>
+                        <div>
+                            <div class="passion-title">Web Development</div>
+                            <div class="passion-desc">Membangun UI yang responsif dan performatif dengan HTML, CSS, JS &
+                                PHP.</div>
+                        </div>
+                    </div>
+                    <div class="passion-item">
+                        <span class="passion-emoji">🎨</span>
+                        <div>
+                            <div class="passion-title">UI/UX Design</div>
+                            <div class="passion-desc">Merancang pengalaman digital yang intuitif dan estetik lewat
+                                Figma.</div>
+                        </div>
+                    </div>
+                    <div class="passion-item">
+                        <span class="passion-emoji">⚙️</span>
+                        <div>
+                            <div class="passion-title">Problem Solving</div>
+                            <div class="passion-desc">Senang memecah masalah kompleks menjadi solusi kode yang bersih.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bento card 3: Stats -->
+            <div class="bento bento-stats reveal" style="--d:.15s">
+                <div class="stat-main">
+                    <span class="stat-num" data-count="12">0</span><span class="stat-plus">+</span>
+                    <span class="stat-label">Projects selesai</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-sub">
+                    <div class="stat-item">
+                        <span class="stat-mini-num" data-count="3">0</span>
+                        <span class="stat-mini-lbl">Sertifikat</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-mini-num" data-count="2">0</span>
+                        <span class="stat-mini-lbl">Tahun coding</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-mini-num" data-count="100">0</span>
+                        <span class="stat-mini-lbl">% Semangat</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bento card 4: Education -->
+            <div class="bento bento-school reveal" style="--d:.2s">
+                <div class="bento-tag">{ education }</div>
+                <div class="school-flex">
+                    <div class="school-emoji">🎓</div>
+                    <div class="school-details">
+                        <div class="sch-name">SMKN 1 Bondowoso</div>
+                        <div class="sch-course">Rekayasa Perangkat Lunak</div>
+                        <div class="sch-year">2022 — 2025</div>
+                    </div>
+                </div>
+                <div class="school-highlights">
+                    <span>Peserta LKS Web</span>
+                    <span>Aktif di OSIS</span>
+                </div>
+            </div>
+
+            <!-- Bento card 5: Currently (NEW) -->
+            <div class="bento bento-now reveal" style="--d:.25s">
+                <div class="bento-tag">{ currently }</div>
+                <ul class="now-list">
+                    <li>
+                        <span class="now-dot now-green"></span>
+                        Belajar <strong>React JS</strong> secara mandiri
+                    </li>
+                    <li>
+                        <span class="now-dot now-blue"></span>
+                        Mengerjakan project <strong>Sistem Akademik</strong>
+                    </li>
+                    <li>
+                        <span class="now-dot now-purple"></span>
+                        Mempersiapkan diri untuk <strong>magang 2026</strong>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ═══════════════════ SKILLS ═══════════════════ -->
+    <section id="skills">
+        <div class="sec-header reveal">
+            <div class="sec-tag">{ what i know }</div>
+            <h2 class="sec-title">Stack <span class="sec-accent">&amp;</span><br>Keahlian</h2>
+        </div>
+
+        <div class="skills-layout">
+            <!-- Horizontal orbit ring visual -->
+            <div class="orbit-wrap reveal">
+                <div class="orbit-core">
+                    <span>FULL</span>
+                    <span>STACK</span>
+                </div>
+                <div class="orbit orbit1">
+                    <div class="orbit-dot" style="--a:0deg"><i class="devicon-html5-plain colored"></i></div>
+                    <div class="orbit-dot" style="--a:90deg"><i class="devicon-react-original colored"></i></div>
+                    <div class="orbit-dot" style="--a:180deg"><i class="devicon-javascript-plain colored"></i></div>
+                    <div class="orbit-dot" style="--a:270deg"><i class="devicon-css3-plain colored"></i></div>
+                </div>
+                <div class="orbit orbit2">
+                    <div class="orbit-dot" style="--a:45deg"><i class="devicon-php-plain colored"></i></div>
+                    <div class="orbit-dot" style="--a:135deg"><i class="devicon-mysql-plain colored"></i></div>
+                    <div class="orbit-dot" style="--a:225deg"><i class="devicon-python-plain colored"></i></div>
+                    <div class="orbit-dot" style="--a:315deg"><i class="devicon-git-plain colored"></i></div>
+                </div>
+            </div>
+
+            <!-- Skill icon cards -->
+            <div class="skill-cards reveal" style="--d:.1s">
+
+                <!-- Frontend -->
+                <div class="skill-category">
+                    <div class="scat-header">
+                        <div class="acc-icon-wrap f-wrap"><svg width="18" height="18" fill="none" stroke="currentColor"
+                                stroke-width="1.5" viewBox="0 0 24 24">
+                                <rect x="3" y="3" width="18" height="18" rx="2" />
+                                <path d="M9 9l3 3-3 3M13 15h3" />
+                            </svg></div>
+                        <span class="scat-title">Frontend</span>
+                    </div>
+                    <div class="skill-icon-grid">
+                        <div class="skill-icon-card">
+                            <div class="sic-logo"><i class="devicon-html5-plain colored"></i></div>
+                            <span class="sic-name">HTML5</span>
+                        </div>
+                        <div class="skill-icon-card">
+                            <div class="sic-logo"><i class="devicon-css3-plain colored"></i></div>
+                            <span class="sic-name">CSS3</span>
+                        </div>
+                        <div class="skill-icon-card">
+                            <div class="sic-logo"><i class="devicon-javascript-plain colored"></i></div>
+                            <span class="sic-name">JavaScript</span>
+                        </div>
+                        <div class="skill-icon-card">
+                            <div class="sic-logo"><i class="devicon-flutter-plain colored"></i></div>
+                            <span class="sic-name">Flutter</span>
+                        </div>
+                        <div class="skill-icon-card">
+                            <div class="sic-logo"><i class="devicon-react-original colored"></i></div>
+                            <span class="sic-name">React JS</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Backend -->
+                <div class="skill-category">
+                    <div class="scat-header">
+                        <div class="acc-icon-wrap b-wrap"><svg width="18" height="18" fill="none" stroke="currentColor"
+                                stroke-width="1.5" viewBox="0 0 24 24">
+                                <path d="M5 12h14M12 5l7 7-7 7" />
+                            </svg></div>
+                        <span class="scat-title">Backend</span>
+                    </div>
+                    <div class="skill-icon-grid">
+                        <div class="skill-icon-card">
+                            <div class="sic-logo"><i class="devicon-php-plain colored"></i></div>
+                            <span class="sic-name">PHP</span>
+                        </div>
+                        <div class="skill-icon-card">
+                            <div class="sic-logo"><i class="devicon-mysql-plain colored"></i></div>
+                            <span class="sic-name">MySQL</span>
+                        </div>
+                        <div class="skill-icon-card">
+                            <div class="sic-logo"><i class="devicon-python-plain colored"></i></div>
+                            <span class="sic-name">Python</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tools -->
+                <div class="skill-category">
+                    <div class="scat-header">
+                        <div class="acc-icon-wrap t-wrap"><svg width="18" height="18" fill="none" stroke="currentColor"
+                                stroke-width="1.5" viewBox="0 0 24 24">
+                                <circle cx="12" cy="12" r="3" />
+                                <path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14" />
+                            </svg></div>
+                        <span class="scat-title">Tools</span>
+                    </div>
+                    <div class="skill-icon-grid">
+                        <div class="skill-icon-card">
+                            <div class="sic-logo"><i class="devicon-figma-plain colored"></i></div>
+                            <span class="sic-name">Figma</span>
+                        </div>
+                        <div class="skill-icon-card">
+                            <div class="sic-logo"><i class="devicon-git-plain colored"></i></div>
+                            <span class="sic-name">Git</span>
+                        </div>
+                        <div class="skill-icon-card">
+                            <div class="sic-logo"><i class="devicon-github-original"></i></div>
+                            <span class="sic-name">GitHub</span>
+                        </div>
+                        <div class="skill-icon-card">
+                            <div class="sic-logo"><i class="devicon-vscode-plain colored"></i></div>
+                            <span class="sic-name">VS Code</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════ PROJECTS ═══════════════════ -->
+    <section id="projects">
+        <div class="sec-header reveal">
+            <div class="sec-tag">{ my work }</div>
+            <h2 class="sec-title">Kumpulan <span class="sec-accent">Karya</span></h2>
+        </div>
+
+        <div class="proj-filters reveal">
+            <button class="pf-btn pf-active" data-filter="all">All</button>
+            <button class="pf-btn" data-filter="web">Web App</button>
+            <button class="pf-btn" data-filter="ui">UI Design</button>
+        </div>
+
+        <!-- Masonry-ish irregular grid -->
+        <div class="proj-grid" id="projGrid">
+
+            <article class="pcard proj-item web reveal" data-filter="web">
+                <div class="pcard-img-wrap">
+                    <div class="pcard-img">
+                        <img src="../images/projects/perpus.png" alt="Perpustakaan"
+                            style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="pcard-hover-actions">
+                        <a href="#" class="pha-btn pha-ghost"
+                            target="https://github.com/rexx-gif/Perpustakaan">GitHub</a>
+                    </div>
+                </div>
+                <div class="pcard-body">
+                    <div class="pcard-badge">Featured ✦</div>
+                    <h3 class="pcard-title">Perpustakaan</h3>
+                    <p class="pcard-desc">Website Perpustakaan Online</p>
+                    <div class="pcard-stack">
+                        <span>Laravel</span><span>MySQL</span><span>Tailwind</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="pcard proj-item web reveal" data-filter="web" style="--d:.1s">
+                <div class="pcard-img-wrap">
+                    <div class="pcard-img">
+                        <img src="../images/projects/nusatrip.jpeg" alt="NusaTrip"
+                            style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="pcard-hover-actions">
+                        <a href="#" class="pha-btn">Live Demo ↗</a>
+                        <a href="#" class="pha-btn pha-ghost">GitHub</a>
+                    </div>
+                </div>
+                <div class="pcard-body">
+                    <h3 class="pcard-title">NusaTripNow</h3>
+                    <p class="pcard-desc">Website Reservasi Wisata Online</p>
+                    <div class="pcard-stack">
+                        <span>Laravel</span><span>Tailwind</span><span>MySQL</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Project 3 — UI Design card -->
+            <article class="pcard proj-item ui reveal" data-filter="ui" style="--d:.15s">
+                <div class="pcard-img-wrap">
+                    <div class="pcard-img">
+                        <img src="../images/projects/electroease.png" alt="">
+                        <div class="pcard-mockup">
+                            <div class="mock-bar"></div>
+                            <div class="mock-content mock-ui">
+                                <div class="mock-card-thumb"></div>
+                                <div class="mock-card-thumb"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pcard-hover-actions">
+                        <a href="#" class="pha-btn">Lihat Figma ↗</a>
+                    </div>
+                </div>
+                <div class="pcard-body">
+                    <div class="pcard-badge pcard-badge-ui">UI/UX</div>
+                    <h3 class="pcard-title">Design Aplikasi Pembelian Elektronik</h3>
+                    <p class="pcard-desc">Eksplorasi UI/UX modern untuk app pembelian elektronik</p>
+                    <div class="pcard-stack">
+                        <span>Figma</span><span>Prototype</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Project 4 — open source card -->
+            <article class="pcard proj-item web reveal" data-filter="web" style="--d:.2s">
+                <div class="pcard-img-wrap">
+                    <div class="pcard-img">
+                        <img src="../images/projects/locallius.jpeg" alt="">
+                        <div class="pcard-mockup">
+                            <div class="mock-bar"></div>
+                            <div class="mock-content">
+                                <div class="mock-line w90"></div>
+                                <div class="mock-line w70"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pcard-hover-actions">
+                        <a href="#" class="pha-btn pha-ghost">GitHub</a>
+                    </div>
+                </div>
+                <div class="pcard-body">
+                    <div class="pcard-badge pcard-badge-os">Open Source</div>
+                    <h3 class="pcard-title">Locallius</h3>
+                    <p class="pcard-desc">Website warung nusantara online.</p>
+                    <div class="pcard-stack">
+                        <span>Laravel</span><span>Tailwind</span><span>MySQL</span>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- ═══════════════════ CERTIFICATES ═══════════════════ -->
+    <section id="certs">
+        <div class="sec-header reveal">
+            <div class="sec-tag">{ achievements }</div>
+            <h2 class="sec-title">Sertifikat <span class="sec-accent">&amp;</span><br>Penghargaan</h2>
+        </div>
+
+        <!-- Horizontal scroll track -->
+        <div class="cert-track-outer reveal">
+            <div class="cert-track" id="certTrack">
+
+                <div class="cert-card">
+                    <div class="cert-inner">
+                        <div class="cert-front">
+                            <div class="cert-glow"></div>
+                            <div class="cert-top">
+                                <div class="cert-logo">
+                                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                                        <rect width="32" height="32" rx="8" fill="#3b82f6" /><text x="50%" y="58%"
+                                            dominant-baseline="middle" text-anchor="middle" fill="white" font-size="10"
+                                            font-weight="bold">WEB</text>
+                                    </svg>
+                                </div>
+                                <div class="cert-ribbon">2025</div>
+                            </div>
+                            <h3 class="cert-name">Juara 1 Web Design Competition</h3>
+                            <p class="cert-issuer">Univ. Muhammadiyah Jember — Innotech</p>
+                            <div class="cert-shimmer"></div>
+                        </div>
+                        <div class="cert-back">
+                            <div class="cert-img">
+                                <img src="../images/certi/innotech.jpg" alt="Innotech Certificate">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cert-card" style="--card-hue:210">
+                    <div class="cert-inner">
+                        <div class="cert-front">
+                            <div class="cert-glow"></div>
+                            <div class="cert-top">
+                                <div class="cert-logo">
+                                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                                        <rect width="32" height="32" rx="8" fill="#6366f1" /><text x="50%" y="58%"
+                                            dominant-baseline="middle" text-anchor="middle" fill="white" font-size="10"
+                                            font-weight="bold">ISAC</text>
+                                    </svg>
+                                </div>
+                                <div class="cert-ribbon">2025</div>
+                            </div>
+                            <h3 class="cert-name">Participant UI/UX Competition</h3>
+                            <p class="cert-issuer">HIMSI Unair — ISAC</p>
+                            <div class="cert-shimmer"></div>
+                        </div>
+                        <div class="cert-back">
+                            <div class="cert-img">
+                                <img src="../images/certi/isac.jpeg" alt="ISAC Certificate">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cert-card" style="--card-hue:150">
+                    <div class="cert-inner">
+                        <div class="cert-front">
+                            <div class="cert-glow"></div>
+                            <div class="cert-top">
+                                <div class="cert-logo">
+                                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                                        <rect width="32" height="32" rx="8" fill="#10b981" /><text x="50%" y="58%"
+                                            dominant-baseline="middle" text-anchor="middle" fill="white" font-size="10"
+                                            font-weight="bold">TIK</text>
+                                    </svg>
+                                </div>
+                                <div class="cert-ribbon">2025</div>
+                            </div>
+                            <h3 class="cert-name">Peserta Pelatihan IT (LATIKA)</h3>
+                            <p class="cert-issuer">Dinas Pendidikan Prov. Jawa Timur</p>
+                            <div class="cert-shimmer"></div>
+                        </div>
+                        <div class="cert-back">
+                            <div class="cert-img">
+                                <img src="../images/certi/latika.jpeg" alt="Latika Certificate">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="cert-nav">
+                <button class="cert-nav-btn" id="certPrev">←</button>
+                <button class="cert-nav-btn" id="certNext">→</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════ CONTACT ═══════════════════ -->
+    <section id="contact">
+        <!-- big bg text -->
+        <div class="contact-bg-text" aria-hidden="true">TALK</div>
+
+        <div class="contact-layout">
+            <div class="contact-left reveal">
+                <div class="sec-tag">{ get in touch }</div>
+                <h2 class="contact-h2">Let's Build<br><em>Something</em><br>Cool<span class="accent-dot">.</span></h2>
+                <p class="contact-body">Punya ide proyek, butuh partner coding, atau sekadar ingin ngobrol soal
+                    teknologi? Pintu saya selalu terbuka.</p>
+
+                <div class="socials">
+                    <a href="https://github.com/[USERNAME]" class="soc-item" target="_blank">
+                        <div class="soc-icon"><i class="devicon-github-original"></i></div>
+                        <div class="soc-label">GitHub<span>→</span></div>
+                    </a>
+                    <a href="https://linkedin.com/in/[USERNAME]" class="soc-item" target="_blank">
+                        <div class="soc-icon"><i class="devicon-linkedin-plain"></i></div>
+                        <div class="soc-label">LinkedIn<span>→</span></div>
+                    </a>
+                    <a href="https://instagram.com/[USERNAME]" class="soc-item" target="_blank">
+                        <div class="soc-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.8" stroke-linecap="round">
+                                <rect x="2" y="2" width="20" height="20" rx="5" />
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                            </svg>
+                        </div>
+                        <div class="soc-label">Instagram<span>→</span></div>
+                    </a>
+                    <a href="https://wa.me/[NOMOR]" class="soc-item" target="_blank">
+                        <div class="soc-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.8" stroke-linecap="round">
+                                <path
+                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                            </svg>
+                        </div>
+                        <div class="soc-label">WhatsApp<span>→</span></div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="contact-right reveal" style="--d:.15s">
+                <form class="cform" id="cForm" onsubmit="submitForm(event)">
+                    <div class="cf-field">
+                        <label class="cf-label">Nama Kamu</label>
+                        <input type="text" class="cf-input" placeholder="John Doe" required>
+                    </div>
+                    <div class="cf-field">
+                        <label class="cf-label">Email</label>
+                        <input type="email" class="cf-input" placeholder="hello@email.com" required>
+                    </div>
+                    <div class="cf-field">
+                        <label class="cf-label">Pesan</label>
+                        <textarea class="cf-input cf-ta" rows="5" placeholder="Hei Septiyan, saya ingin ngobrol soal..."
+                            required></textarea>
+                    </div>
+                    <button type="submit" class="cf-submit" id="cfSubmit">
+                        <span id="cfBtnText">Kirim Pesan 🚀</span>
+                        <div class="cf-spinner" id="cfSpinner"></div>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-line"></div>
+        <div class="footer-inner">
+            <div class="footer-left">© 2026 Septiyan Bintang. All rights reserved.</div>
+            <div class="footer-mid">
+                Made with <svg viewBox="0 0 24 24" class="heart-icon">
+                    <path
+                        d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                </svg> &amp; caffeine
+            </div>
+            <button class="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">↑</button>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+
+</html>
