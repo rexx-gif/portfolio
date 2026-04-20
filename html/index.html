@@ -40,16 +40,21 @@
 
     <!-- Floating nav -->
     <nav id="nav">
-        <a href="#" class="nav-wordmark"><span></span></a>
         <div class="nav-links">
-            <a href="#about" data-label="About">About</a>
-            <a href="#skills" data-label="Skills">Skills</a>
-            <a href="#projects" data-label="Work">Work</a>
-            <a href="#certs" data-label="Awards">Awards</a>
+            <a href="#about" data-t="nav.about">Tentang</a>
+            <a href="#skills" data-t="nav.skills">Keahlian</a>
+            <a href="#projects" data-t="nav.work">Karya</a>
+            <a href="#awards" data-t="nav.awards">Penghargaan</a>
         </div>
         <div class="nav-btns">
+            <button id="langToggle" class="lang-btn" aria-label="Switch Language">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                </svg>
+                <span id="langText">EN</span>
+            </button>
             <a href="#contact" class="nav-cta">
-                <span>Hire Me</span>
+                <span data-t="nav.hire">Hubungi</span>
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M7 17L17 7M7 7h10v10" />
                 </svg>
@@ -87,7 +92,7 @@
             <div class="hero-left">
                 <div class="avail-pill">
                     <span class="avail-dot"></span>
-                    Open to Opportunities
+                    <span data-t="hero.avail">Open to Opportunities</span>
                 </div>
                 <h1 class="hero-h1">
                     <span class="h1-line" data-reveal>Septiyan</span>
@@ -95,16 +100,14 @@
                     <span class="h1-line" data-reveal>Ramadhan</span>
                     <span class="h1-line" data-reveal>Putra</span>
                 </h1>
-                <p class="hero-sub" data-reveal>
-                    Siswa SMK yang membangun antarmuka digital — menyatukan kode yang bersih dengan desain yang
-                    bernyawa.
+                <p class="hero-sub" data-t="hero.sub">
+                    Siswa SMK RPL & Flutter Developer yang berdedikasi membangun aplikasi mobile yang bersih, fungsional, dan berorientasi pengguna.
                 </p>
                 <div class="hero-actions" data-reveal>
                     <a href="#projects" class="btn-main">
-                        <span>Lihat Karya</span>
+                        <span data-t="hero.cta">Lihat Karya</span>
                         <div class="btn-circle">→</div>
                     </a>
-                    <a href="#" class="btn-outline" id="cvBtn">Download CV</a>
                 </div>
             </div>
 
@@ -122,9 +125,9 @@
                             <path
                                 d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
                         </svg>
-                        12+ Projects
+                        5+ Projects
                     </div>
-                    <div class="chip chip2">⚡ Frontend Dev</div>
+                    <div class="chip chip2">⚡ Flutter Developer</div>
                     <div class="chip chip3">
                         <span class="chip-dot"></span>
                         Bondowoso, ID
@@ -139,53 +142,53 @@
 
     <!-- ═══════════════════ ABOUT ═══════════════════ -->
     <section id="about">
+        <div class="sec-header reveal">
+            <div class="sec-tag" data-t="about.sec.tag">{ about me }</div>
+            <h2 class="sec-title" data-t="about.sec.title">Mengenal <span class="sec-accent">&amp;</span><br>Profil Saya</h2>
+        </div>
+
         <div class="about-layout">
 
             <!-- Bento card 1: Intro -->
             <div class="bento bento-intro reveal">
-                <div class="bento-tag">{ bio }</div>
-                <p class="bento-big-text">
-                    Halo! Saya <em>Septiyan Bintang</em>, siswa <strong>RPL</strong> di SMKN 1 Bondowoso
-                    yang gemar membangun antarmuka web yang terasa hidup. Bagi saya, kode yang baik bukan
-                    hanya yang berjalan — tapi yang juga <em>terasa</em> oleh penggunanya.
+                <div class="bento-tag" data-t="about.tag">{ bio }</div>
+                <p class="bento-big-text" data-t="about.bio">
+                    Halo! Saya <em>Septiyan Bintang</em>, seorang <strong>Flutter Mobile Developer</strong> & siswa RPL di SMKN 1 Bondowoso yang berdedikasi membangun aplikasi mobile yang indah dan berperforma tinggi. Bagi saya, aplikasi yang baik bukan hanya soal fungsionalitas — tapi juga tentang <em>pengalaman pengguna</em> yang mulus.
                 </p>
                 <div class="about-quote">
                     <div class="quote-mark">"</div>
-                    <p>Saya tidak hanya belajar coding — saya belajar cara berpikir seperti seorang engineer.</p>
+                    <p data-t="about.quote">Saya tidak hanya belajar coding — saya belajar cara berpikir seperti seorang engineer.</p>
                 </div>
                 <div class="about-tags">
-                    <span>🎯 Fokus: Frontend & Backend</span>
-                    <span>📍 Bondowoso, Jawa Timur</span>
-                    <span>🔍 Open to Internship</span>
+                    <span data-t="about.focus">🎯 Fokus: Mobile & Frontend Dev</span>
+                    <span data-t="about.loc">📍 Bondowoso, Jawa Timur</span>
+                    <span data-t="about.intern">🔍 Open to Internship</span>
                 </div>
             </div>
 
             <!-- Bento card 2: Passion -->
             <div class="bento bento-passion reveal" style="--d:.1s">
-                <div class="bento-tag">{ passion }</div>
+                <div class="bento-tag" data-t="passion.tag">{ passion }</div>
                 <div class="passion-list">
                     <div class="passion-item">
                         <span class="passion-emoji">🌐</span>
                         <div>
-                            <div class="passion-title">Web Development</div>
-                            <div class="passion-desc">Membangun UI yang responsif dan performatif dengan HTML, CSS, JS &
-                                PHP.</div>
+                            <div class="passion-title" data-t="passion.mobile.title">Mobile Development</div>
+                            <div class="passion-desc" data-t="passion.mobile.desc">Membangun aplikasi lintas platform yang performan dengan Flutter & Dart.</div>
                         </div>
                     </div>
                     <div class="passion-item">
                         <span class="passion-emoji">🎨</span>
                         <div>
-                            <div class="passion-title">UI/UX Design</div>
-                            <div class="passion-desc">Merancang pengalaman digital yang intuitif dan estetik lewat
-                                Figma.</div>
+                            <div class="passion-title" data-t="passion.design.title">UI/UX Design</div>
+                            <div class="passion-desc" data-t="passion.design.desc">Merancang pengalaman digital yang intuitif dan estetik lewat Figma.</div>
                         </div>
                     </div>
                     <div class="passion-item">
                         <span class="passion-emoji">⚙️</span>
                         <div>
-                            <div class="passion-title">Problem Solving</div>
-                            <div class="passion-desc">Senang memecah masalah kompleks menjadi solusi kode yang bersih.
-                            </div>
+                            <div class="passion-title" data-t="passion.solve.title">Problem Solving</div>
+                            <div class="passion-desc" data-t="passion.solve.desc">Senang memecah masalah kompleks menjadi solusi kode yang bersih.</div>
                         </div>
                     </div>
                 </div>
@@ -194,70 +197,46 @@
             <!-- Bento card 3: Stats -->
             <div class="bento bento-stats reveal" style="--d:.15s">
                 <div class="stat-main">
-                    <span class="stat-num" data-count="12">0</span><span class="stat-plus">+</span>
-                    <span class="stat-label">Projects selesai</span>
+                    <span class="stat-num" data-count="5">0</span><span class="stat-plus">+</span>
+                    <span class="stat-label" data-t="stat.projects">Projects selesai</span>
                 </div>
                 <div class="stat-divider"></div>
                 <div class="stat-sub">
                     <div class="stat-item">
                         <span class="stat-mini-num" data-count="3">0</span>
-                        <span class="stat-mini-lbl">Sertifikat</span>
+                        <span class="stat-mini-lbl" data-t="stat.certs">Sertifikat</span>
                     </div>
                     <div class="stat-item">
                         <span class="stat-mini-num" data-count="2">0</span>
-                        <span class="stat-mini-lbl">Tahun coding</span>
+                        <span class="stat-mini-lbl" data-t="stat.years">Tahun coding</span>
                     </div>
                     <div class="stat-item">
                         <span class="stat-mini-num" data-count="100">0</span>
-                        <span class="stat-mini-lbl">% Semangat</span>
+                        <span class="stat-mini-lbl" data-t="stat.spirit">% Semangat</span>
                     </div>
                 </div>
             </div>
 
             <!-- Bento card 4: Education -->
             <div class="bento bento-school reveal" style="--d:.2s">
-                <div class="bento-tag">{ education }</div>
+                <div class="bento-tag" data-t="edu.tag">{ education }</div>
                 <div class="school-flex">
                     <div class="school-emoji">🎓</div>
                     <div class="school-details">
                         <div class="sch-name">SMKN 1 Bondowoso</div>
-                        <div class="sch-course">Rekayasa Perangkat Lunak</div>
+                        <div class="sch-course" data-t="edu.course">Rekayasa Perangkat Lunak</div>
                         <div class="sch-year">2022 — 2025</div>
                     </div>
                 </div>
-                <div class="school-highlights">
-                    <span>Peserta LKS Web</span>
-                    <span>Aktif di OSIS</span>
-                </div>
             </div>
-
-            <!-- Bento card 5: Currently (NEW) -->
-            <div class="bento bento-now reveal" style="--d:.25s">
-                <div class="bento-tag">{ currently }</div>
-                <ul class="now-list">
-                    <li>
-                        <span class="now-dot now-green"></span>
-                        Belajar <strong>React JS</strong> secara mandiri
-                    </li>
-                    <li>
-                        <span class="now-dot now-blue"></span>
-                        Mengerjakan project <strong>Sistem Akademik</strong>
-                    </li>
-                    <li>
-                        <span class="now-dot now-purple"></span>
-                        Mempersiapkan diri untuk <strong>magang 2026</strong>
-                    </li>
-                </ul>
-            </div>
-
         </div>
     </section>
 
     <!-- ═══════════════════ SKILLS ═══════════════════ -->
     <section id="skills">
         <div class="sec-header reveal">
-            <div class="sec-tag">{ what i know }</div>
-            <h2 class="sec-title">Stack <span class="sec-accent">&amp;</span><br>Keahlian</h2>
+            <div class="sec-tag" data-t="skills.tag">{ what i know }</div>
+            <h2 class="sec-title" data-t="skills.sec.title">Stack <span class="sec-accent">&amp;</span><br>Keahlian</h2>
         </div>
 
         <div class="skills-layout">
@@ -311,10 +290,6 @@
                             <div class="sic-logo"><i class="devicon-flutter-plain colored"></i></div>
                             <span class="sic-name">Flutter</span>
                         </div>
-                        <div class="skill-icon-card">
-                            <div class="sic-logo"><i class="devicon-react-original colored"></i></div>
-                            <span class="sic-name">React JS</span>
-                        </div>
                     </div>
                 </div>
 
@@ -331,6 +306,10 @@
                         <div class="skill-icon-card">
                             <div class="sic-logo"><i class="devicon-php-plain colored"></i></div>
                             <span class="sic-name">PHP</span>
+                        </div>
+                        <div class="skill-icon-card">
+                            <div class="sic-logo"><i class="devicon-laravel-plain colored"></i></div>
+                            <span class="sic-name">Laravel</span>
                         </div>
                         <div class="skill-icon-card">
                             <div class="sic-logo"><i class="devicon-mysql-plain colored"></i></div>
@@ -380,34 +359,53 @@
     <!-- ═══════════════════ PROJECTS ═══════════════════ -->
     <section id="projects">
         <div class="sec-header reveal">
-            <div class="sec-tag">{ my work }</div>
-            <h2 class="sec-title">Kumpulan <span class="sec-accent">Karya</span></h2>
+            <div class="sec-tag" data-t="work.sec.tag">{ recent work }</div>
+            <h2 class="sec-title" data-t="work.sec.title">Proyek <span class="sec-accent">&amp;</span><br>Karya Pilihan</h2>
         </div>
 
         <div class="proj-filters reveal">
             <button class="pf-btn pf-active" data-filter="all">All</button>
             <button class="pf-btn" data-filter="web">Web App</button>
             <button class="pf-btn" data-filter="ui">UI Design</button>
+            <button class="pf-btn" data-filter="mobile">Mobile App</button>
         </div>
 
         <!-- Masonry-ish irregular grid -->
         <div class="proj-grid" id="projGrid">
 
-            <article class="pcard proj-item web reveal" data-filter="web">
+            <article class="pcard pcard-v proj-item web reveal" data-filter="mobile">
                 <div class="pcard-img-wrap">
                     <div class="pcard-img">
-                        <img src="../images/projects/perpus.png" alt="Perpustakaan"
-                            style="width: 100%; height: 100%; object-fit: cover;">
+                        <img src="../images/projects/electroease.jpg" alt="Flutter App 1">
                     </div>
                     <div class="pcard-hover-actions">
-                        <a href="#" class="pha-btn pha-ghost"
-                            target="https://github.com/rexx-gif/Perpustakaan">GitHub</a>
+                        <a href="#" class="pha-btn">Github</a>
                     </div>
                 </div>
                 <div class="pcard-body">
-                    <div class="pcard-badge">Featured ✦</div>
+                    <div class="pcard-badge">Flutter App</div>
+                    <h3 class="pcard-title">ElectroEase</h3>
+                    <p class="pcard-desc">Aplikasi prototype pemesanan alat elektronik.</p>
+                    <div class="pcard-stack">
+                        <span>Flutter</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="pcard proj-item web reveal" data-filter="web" style="--d:.2s">
+                <div class="pcard-img-wrap">
+                    <div class="pcard-img">
+                        <img src="../images/projects/perpus.png" alt="Perpustakaan">
+                    </div>
+                    <div class="pcard-hover-actions">
+                        <a href="https://github.com/rexx-gif/Perpustakaan" class="pha-btn pha-ghost"
+                            target="_blank">GitHub</a>
+                    </div>
+                </div>
+                <div class="pcard-body">
+                    <div class="pcard-badge" data-t="proj1.badge">Featured ✦</div>
                     <h3 class="pcard-title">Perpustakaan</h3>
-                    <p class="pcard-desc">Website Perpustakaan Online</p>
+                    <p class="pcard-desc" data-t="proj1.desc">Website manajemen perpustakaan modern untuk efisiensi peminjaman buku.</p>
                     <div class="pcard-stack">
                         <span>Laravel</span><span>MySQL</span><span>Tailwind</span>
                     </div>
@@ -417,46 +415,18 @@
             <article class="pcard proj-item web reveal" data-filter="web" style="--d:.1s">
                 <div class="pcard-img-wrap">
                     <div class="pcard-img">
-                        <img src="../images/projects/nusatrip.jpeg" alt="NusaTrip"
-                            style="width: 100%; height: 100%; object-fit: cover;">
+                        <img src="../images/projects/nusatrip.jpeg" alt="NusaTrip">
                     </div>
                     <div class="pcard-hover-actions">
-                        <a href="#" class="pha-btn">Live Demo ↗</a>
+                        <a href="#" class="pha-btn" data-t="proj.demo">Live Demo ↗</a>
                         <a href="#" class="pha-btn pha-ghost">GitHub</a>
                     </div>
                 </div>
                 <div class="pcard-body">
                     <h3 class="pcard-title">NusaTripNow</h3>
-                    <p class="pcard-desc">Website Reservasi Wisata Online</p>
+                    <p class="pcard-desc" data-t="proj2.desc">Platform reservasi wisata lokal dengan sistem booking yang mudah dan cepat.</p>
                     <div class="pcard-stack">
                         <span>Laravel</span><span>Tailwind</span><span>MySQL</span>
-                    </div>
-                </div>
-            </article>
-
-            <!-- Project 3 — UI Design card -->
-            <article class="pcard proj-item ui reveal" data-filter="ui" style="--d:.15s">
-                <div class="pcard-img-wrap">
-                    <div class="pcard-img">
-                        <img src="../images/projects/electroease.png" alt="">
-                        <div class="pcard-mockup">
-                            <div class="mock-bar"></div>
-                            <div class="mock-content mock-ui">
-                                <div class="mock-card-thumb"></div>
-                                <div class="mock-card-thumb"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="pcard-hover-actions">
-                        <a href="#" class="pha-btn">Lihat Figma ↗</a>
-                    </div>
-                </div>
-                <div class="pcard-body">
-                    <div class="pcard-badge pcard-badge-ui">UI/UX</div>
-                    <h3 class="pcard-title">Design Aplikasi Pembelian Elektronik</h3>
-                    <p class="pcard-desc">Eksplorasi UI/UX modern untuk app pembelian elektronik</p>
-                    <div class="pcard-stack">
-                        <span>Figma</span><span>Prototype</span>
                     </div>
                 </div>
             </article>
@@ -465,23 +435,16 @@
             <article class="pcard proj-item web reveal" data-filter="web" style="--d:.2s">
                 <div class="pcard-img-wrap">
                     <div class="pcard-img">
-                        <img src="../images/projects/locallius.jpeg" alt="">
-                        <div class="pcard-mockup">
-                            <div class="mock-bar"></div>
-                            <div class="mock-content">
-                                <div class="mock-line w90"></div>
-                                <div class="mock-line w70"></div>
-                            </div>
-                        </div>
+                        <img src="../images/projects/locallius.jpeg" alt="Locallius">
                     </div>
                     <div class="pcard-hover-actions">
                         <a href="#" class="pha-btn pha-ghost">GitHub</a>
                     </div>
                 </div>
                 <div class="pcard-body">
-                    <div class="pcard-badge pcard-badge-os">Open Source</div>
+                    <div class="pcard-badge pcard-badge-os" data-t="proj4.badge">Open Source</div>
                     <h3 class="pcard-title">Locallius</h3>
-                    <p class="pcard-desc">Website warung nusantara online.</p>
+                    <p class="pcard-desc" data-t="proj4.desc">Digitalisasi warung tradisional melalui platform e-commerce nusantara.</p>
                     <div class="pcard-stack">
                         <span>Laravel</span><span>Tailwind</span><span>MySQL</span>
                     </div>
@@ -492,10 +455,10 @@
     </section>
 
     <!-- ═══════════════════ CERTIFICATES ═══════════════════ -->
-    <section id="certs">
+    <section id="awards">
         <div class="sec-header reveal">
-            <div class="sec-tag">{ achievements }</div>
-            <h2 class="sec-title">Sertifikat <span class="sec-accent">&amp;</span><br>Penghargaan</h2>
+            <div class="sec-tag" data-t="award.sec.tag">{ achievements }</div>
+            <h2 class="sec-title" data-t="award.sec.title">Sertifikat <span class="sec-accent">&amp;</span><br>Penghargaan</h2>
         </div>
 
         <!-- Horizontal scroll track -->
@@ -595,32 +558,21 @@
 
         <div class="contact-layout">
             <div class="contact-left reveal">
-                <div class="sec-tag">{ get in touch }</div>
-                <h2 class="contact-h2">Let's Build<br><em>Something</em><br>Cool<span class="accent-dot">.</span></h2>
-                <p class="contact-body">Punya ide proyek, butuh partner coding, atau sekadar ingin ngobrol soal
+                <div class="sec-tag" data-t="contact.tag">{ get in touch }</div>
+                <h2 class="contact-h2" data-t="contact.h2">Let's Build<br><em>Something</em><br>Cool<span class="accent-dot">.</span></h2>
+                <p class="contact-body" data-t="contact.body">Punya ide proyek, butuh partner coding, atau sekadar ingin ngobrol soal
                     teknologi? Pintu saya selalu terbuka.</p>
 
                 <div class="socials">
-                    <a href="https://github.com/[USERNAME]" class="soc-item" target="_blank">
+                    <a href="https://github.com/rexx-gif" class="soc-item" target="_blank">
                         <div class="soc-icon"><i class="devicon-github-original"></i></div>
                         <div class="soc-label">GitHub<span>→</span></div>
                     </a>
-                    <a href="https://linkedin.com/in/[USERNAME]" class="soc-item" target="_blank">
+                    <a href="https://linkedin.com/in/septiyan-bintang-ramadhan-putra-365a4b403" class="soc-item" target="_blank">
                         <div class="soc-icon"><i class="devicon-linkedin-plain"></i></div>
                         <div class="soc-label">LinkedIn<span>→</span></div>
                     </a>
-                    <a href="https://instagram.com/[USERNAME]" class="soc-item" target="_blank">
-                        <div class="soc-icon">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="1.8" stroke-linecap="round">
-                                <rect x="2" y="2" width="20" height="20" rx="5" />
-                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
-                            </svg>
-                        </div>
-                        <div class="soc-label">Instagram<span>→</span></div>
-                    </a>
-                    <a href="https://wa.me/[NOMOR]" class="soc-item" target="_blank">
+                    <a href="https://wa.me/6283847288793" class="soc-item" target="_blank">
                         <div class="soc-icon">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                 stroke-width="1.8" stroke-linecap="round">
@@ -634,22 +586,22 @@
             </div>
 
             <div class="contact-right reveal" style="--d:.15s">
-                <form class="cform" id="cForm" onsubmit="submitForm(event)">
+                <form class="cform" id="cForm" action="https://formspree.io/f/xjgjoqpo" method="POST">
                     <div class="cf-field">
-                        <label class="cf-label">Nama Kamu</label>
-                        <input type="text" class="cf-input" placeholder="John Doe" required>
+                        <label class="cf-label" data-t="contact.name">Nama Kamu</label>
+                        <input type="text" name="name" class="cf-input" placeholder="John Doe" required>
                     </div>
                     <div class="cf-field">
                         <label class="cf-label">Email</label>
-                        <input type="email" class="cf-input" placeholder="hello@email.com" required>
+                        <input type="email" name="email" class="cf-input" placeholder="hello@email.com" required>
                     </div>
                     <div class="cf-field">
-                        <label class="cf-label">Pesan</label>
-                        <textarea class="cf-input cf-ta" rows="5" placeholder="Hei Septiyan, saya ingin ngobrol soal..."
+                        <label class="cf-label" data-t="contact.msg">Pesan</label>
+                        <textarea name="message" class="cf-input cf-ta" rows="5" placeholder="Hei Septiyan, saya ingin ngobrol soal..."
                             required></textarea>
                     </div>
                     <button type="submit" class="cf-submit" id="cfSubmit">
-                        <span id="cfBtnText">Kirim Pesan 🚀</span>
+                        <span id="cfBtnText" data-t="contact.send">Kirim Pesan 🚀</span>
                         <div class="cf-spinner" id="cfSpinner"></div>
                     </button>
                 </form>
@@ -662,12 +614,6 @@
         <div class="footer-line"></div>
         <div class="footer-inner">
             <div class="footer-left">© 2026 Septiyan Bintang. All rights reserved.</div>
-            <div class="footer-mid">
-                Made with <svg viewBox="0 0 24 24" class="heart-icon">
-                    <path
-                        d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
-                </svg> &amp; caffeine
-            </div>
             <button class="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">↑</button>
         </div>
     </footer>

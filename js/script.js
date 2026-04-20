@@ -154,68 +154,236 @@ document.getElementById('certNext').addEventListener('click', () => {
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━
    CONTACT FORM
 ━━━━━━━━━━━━━━━━━━━━━━━━━━ */
-function submitForm(e) {
-    e.preventDefault();
+async function submitForm(e) {
+    if (e) e.preventDefault();
+    const form = document.getElementById('cForm');
     const btn = document.getElementById('cfSubmit');
     const txt = document.getElementById('cfBtnText');
-    const spin= document.getElementById('cfSpinner');
+    const spin = document.getElementById('cfSpinner');
 
     btn.classList.add('loading');
     txt.style.display = 'none';
     spin.style.display = 'block';
 
-    setTimeout(() => {
+    try {
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData.entries()); // Convert to plain object
+
+        const response = await fetch(form.action, {
+            method: 'POST',
+            body: JSON.stringify(data),
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            }
+        });
+
+        if (response.ok) {
+            btn.classList.remove('loading');
+            btn.style.background = '#10b981';
+            txt.style.display = 'block';
+            txt.textContent = 'Terkirim! ✅';
+            spin.style.display = 'none';
+            form.reset();
+
+            setTimeout(() => {
+                btn.style.background = '';
+                txt.textContent = 'Kirim Pesan 🚀';
+            }, 3000);
+        } else {
+            const errorData = await response.json();
+            console.error('Formspree Error:', errorData);
+            throw new Error(errorData.error || 'Form submission failed');
+        }
+    } catch (error) {
         btn.classList.remove('loading');
-        btn.style.background = '#10b981';
+        btn.style.background = '#ef4444';
         txt.style.display = 'block';
-        txt.textContent = 'Terkirim! ✅';
+        txt.textContent = 'Gagal Mengirim ❌';
         spin.style.display = 'none';
-        e.target.reset();
 
         setTimeout(() => {
             btn.style.background = '';
             txt.textContent = 'Kirim Pesan 🚀';
         }, 3000);
-    }, 2000);
+    }
+}
+
+// Attach listener
+const contactForm = document.getElementById('cForm');
+if (contactForm) {
+    contactForm.addEventListener('submit', submitForm);
 }
 
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━
-   PARALLAX BLOBS (subtle)
+   TRANSFORM & ANIMATIONS
 ━━━━━━━━━━━━━━━━━━━━━━━━━━ */
-window.addEventListener('mousemove', e => {
-    const x = (e.clientX / window.innerWidth  - 0.5) * 20;
-    const y = (e.clientY / window.innerHeight - 0.5) * 20;
-    document.querySelectorAll('.h-blob').forEach((b, i) => {
-        const d = (i + 1) * 0.4;
-        b.style.transform = `translate(${x*d}px, ${y*d}px)`;
-    });
-});
+// (Any specific transform animations go here)
 
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━
-   CV BUTTON EASTER EGG
+   MULTI-LANGUAGE SUPPORT (i18n)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━ */
-document.getElementById('cvBtn').addEventListener('click', e => {
-    e.preventDefault();
-    const el = e.target;
-    const orig = el.textContent;
-    el.textContent = '📄 Segera!';
-    setTimeout(() => el.textContent = orig, 2000);
-});
+const translations = {
+    id: {
+        "nav.about": "Tentang",
+        "nav.skills": "Keahlian",
+        "nav.work": "Karya",
+        "nav.awards": "Penghargaan",
+        "nav.hire": "Hubungi",
+        "hero.avail": "Siap untuk Peluang",
+        "hero.sub": "Siswa SMK RPL & Flutter Developer yang berdedikasi membangun aplikasi mobile yang bersih, fungsional, dan berorientasi pengguna.",
+        "hero.cta": "Lihat Karya",
+        "hero.cv": "Unduh CV",
+        "about.tag": "{ bio }",
+        "about.sec.tag": "{ about me }",
+        "about.sec.title": "Mengenal <span class=\"sec-accent\">&amp;</span><br>Profil Saya",
+        "about.bio": "Halo! Saya <em>Septiyan Bintang</em>, seorang <strong>Flutter Mobile Developer</strong> & siswa RPL di SMKN 1 Bondowoso yang berdedikasi membangun aplikasi mobile yang indah dan berperforma tinggi. Bagi saya, aplikasi yang baik bukan hanya soal fungsionalitas — tapi juga tentang <em>pengalaman pengguna</em> yang mulus.",
+        "about.quote": "Saya tidak hanya belajar coding — saya belajar cara berpikir seperti seorang engineer.",
+        "about.focus": "🎯 Fokus: Mobile & Frontend Dev",
+        "about.loc": "📍 Bondowoso, Jawa Timur",
+        "about.intern": "🔍 Siap untuk Magang",
+        "passion.tag": "{ passion }",
+        "passion.mobile.title": "Mobile Development",
+        "passion.mobile.desc": "Membangun aplikasi lintas platform yang performan dengan Flutter & Dart.",
+        "passion.design.title": "UI/UX Design",
+        "passion.design.desc": "Merancang pengalaman digital yang intuitif dan estetik lewat Figma.",
+        "passion.solve.title": "Problem Solving",
+        "passion.solve.desc": "Senang memecah masalah kompleks menjadi solusi kode yang bersih.",
+        "stat.projects": "Projects selesai",
+        "stat.certs": "Sertifikat",
+        "stat.years": "Tahun coding",
+        "stat.spirit": "% Semangat",
+        "edu.tag": "{ education }",
+        "edu.course": "Rekayasa Perangkat Lunak",
+        "skills.tag": "{ what i know }",
+        "skills.sec.title": "Stack <span class=\"sec-accent\">&amp;</span><br>Keahlian",
+        "work.sec.tag": "{ recent work }",
+        "work.sec.title": "Proyek <span class=\"sec-accent\">&amp;</span><br>Karya Pilihan",
+        "award.sec.tag": "{ achievements }",
+        "award.sec.title": "Sertifikat <span class=\"sec-accent\">&amp;</span><br>Penghargaan",
+        "proj1.badge": "Featured ✦",
+        "proj1.desc": "Website manajemen perpustakaan modern untuk efisiensi peminjaman buku.",
+        "proj2.desc": "Platform reservasi wisata lokal dengan sistem booking yang mudah dan cepat.",
+        "proj3.desc": "Eksplorasi desain UI/UX untuk aplikasi marketplace elektronik yang user-friendly.",
+        "proj4.badge": "Open Source",
+        "proj4.desc": "Digitalisasi warung tradisional melalui platform e-commerce nusantara.",
+        "proj.demo": "Live Demo ↗",
+        "proj.figma": "Lihat Figma ↗",
+        "contact.tag": "{ get in touch }",
+        "contact.h2": "Yuk, Bangun<br><em>Sesuatu</em><br>yang Keren<span class=\"accent-dot\">.</span>",
+        "contact.title": "Yuk, Bangun Sesuatu yang Keren.",
+        "contact.body": "Punya ide proyek, butuh partner coding, atau sekadar ingin ngobrol soal teknologi? Pintu saya selalu terbuka.",
+        "contact.sub": "Punya ide proyek, butuh partner coding, atau sekadar ingin ngobrol soal teknologi? Kirim pesan saja!",
+        "contact.name": "Nama Kamu",
+        "contact.msg": "Pesan",
+        "contact.send": "Kirim Pesan 🚀"
+    },
+    en: {
+        "nav.about": "About",
+        "nav.skills": "Skills",
+        "nav.work": "Work",
+        "nav.awards": "Awards",
+        "nav.hire": "Hire Me",
+        "hero.avail": "Open to Opportunities",
+        "hero.sub": "SMK RPL student & Flutter Developer dedicated to building clean, functional, and user-oriented mobile applications.",
+        "hero.cta": "View Work",
+        "hero.cv": "Download CV",
+        "about.tag": "{ bio }",
+        "about.sec.tag": "{ about me }",
+        "about.sec.title": "Discover <span class=\"sec-accent\">&amp;</span><br>My Profile",
+        "about.bio": "Hello! I am <em>Septiyan Bintang</em>, a <strong>Flutter Mobile Developer</strong> & CS student at SMKN 1 Bondowoso dedicated to building beautiful and high-performance mobile apps. For me, a good app is not just about functionality — it's about a seamless <em>user experience</em>.",
+        "about.quote": "I don't just learn to code — I learn how to think like an engineer.",
+        "about.focus": "🎯 Focus: Mobile & Frontend Dev",
+        "about.loc": "📍 Bondowoso, ID",
+        "about.intern": "🔍 Open to Internship",
+        "passion.tag": "{ passion }",
+        "passion.mobile.title": "Mobile Development",
+        "passion.mobile.desc": "Building high-performance cross-platform apps with Flutter & Dart.",
+        "passion.design.title": "UI/UX Design",
+        "passion.design.desc": "Designing intuitive and aesthetic digital experiences using Figma.",
+        "passion.solve.title": "Problem Solving",
+        "passion.solve.desc": "Enjoy breaking down complex problems into clean code solutions.",
+        "stat.projects": "Projects completed",
+        "stat.certs": "Certificates",
+        "stat.years": "Years coding",
+        "stat.spirit": "% Spirit",
+        "edu.tag": "{ education }",
+        "edu.course": "Software Engineering",
+        "edu.year": "2022 — 2025",
+        "skills.tag": "{ what i know }",
+        "skills.sec.title": "Stack <span class=\"sec-accent\">&amp;</span><br>Expertise",
+        "work.sec.tag": "{ recent work }",
+        "work.sec.title": "Projects <span class=\"sec-accent\">&amp;</span><br>Selected Work",
+        "award.sec.tag": "{ achievements }",
+        "award.sec.title": "Certificates <span class=\"sec-accent\">&amp;</span><br>Awards",
+        "proj1.badge": "Featured ✦",
+        "proj1.desc": "Modern library management website for efficient book lending processes.",
+        "proj2.desc": "Local travel reservation platform with an easy and fast booking system.",
+        "proj3.desc": "UI/UX design exploration for a user-friendly electronics marketplace app.",
+        "proj4.badge": "Open Source",
+        "proj4.desc": "Digitalizing traditional shops through an Indonesian e-commerce platform.",
+        "proj.demo": "Live Demo ↗",
+        "proj.figma": "View Figma ↗",
+        "contact.tag": "{ get in touch }",
+        "contact.h2": "Let's Build<br><em>Something</em><br>Cool<span class=\"accent-dot\">.</span>",
+        "contact.title": "Let's Build Something Cool.",
+        "contact.body": "Have a project idea, need a coding partner, or just want to chat about tech? My door is always open.",
+        "contact.sub": "Have a project idea, need a coding partner, or just want to chat about tech? Drop a message!",
+        "contact.name": "Your Name",
+        "contact.msg": "Message",
+        "contact.send": "Send Message 🚀"
+    }
+};
 
-/* ━━━━━━━━━━━━━━━━━━━━━━━━━━
-   PROFILE PHOTO TILT
-━━━━━━━━━━━━━━━━━━━━━━━━━━ */
-const photoFrame = document.querySelector('.photo-frame');
-if (photoFrame) {
-    photoFrame.addEventListener('mousemove', e => {
-        const rect = photoFrame.getBoundingClientRect();
-        const cx = rect.left + rect.width  / 2;
-        const cy = rect.top  + rect.height / 2;
-        const rx_ = ((e.clientY - cy) / rect.height) * 12;
-        const ry_ = ((e.clientX - cx) / rect.width)  * -12;
-        photoFrame.style.transform = `perspective(600px) rotateX(${rx_}deg) rotateY(${ry_}deg) scale(1.03)`;
+// Auto-detect browser language if not set
+function getInitialLang() {
+    const saved = localStorage.getItem('portfolioLang');
+    if (saved) return saved;
+    return navigator.language.startsWith('id') ? 'id' : 'en';
+}
+
+let currentLang = getInitialLang();
+
+function updateContent() {
+    document.querySelectorAll('[data-t]').forEach(el => {
+        const key = el.getAttribute('data-t');
+        if (translations[currentLang][key]) {
+            // Use innerHTML for keys that might contain formatting (em, strong, span, br)
+            if (key.includes('.bio') || key.includes('.sub') || key.includes('.desc') || key.includes('.title') || key.includes('.h2') || key.includes('.sec.title')) {
+                el.innerHTML = translations[currentLang][key];
+            } else {
+                el.textContent = translations[currentLang][key];
+            }
+        }
     });
-    photoFrame.addEventListener('mouseleave', () => {
-        photoFrame.style.transform = 'perspective(600px) rotateX(0) rotateY(0) scale(1)';
+
+    // Update toggle button text
+    const langLabel = document.getElementById('langText');
+    if (langLabel) {
+        langLabel.textContent = currentLang === 'id' ? 'EN' : 'ID';
+    }
+
+    // Specific placeholders
+    if (currentLang === 'en') {
+        document.querySelector('input[name="name"]')?.setAttribute('placeholder', 'Your Name');
+        document.querySelector('textarea[name="message"]')?.setAttribute('placeholder', 'Hey Septiyan, I want to talk about...');
+    } else {
+        document.querySelector('input[name="name"]')?.setAttribute('placeholder', 'John Doe');
+        document.querySelector('textarea[name="message"]')?.setAttribute('placeholder', 'Hei Septiyan, saya ingin ngobrol soal...');
+    }
+    
+    // Update HTML lang attribute
+    document.documentElement.lang = currentLang;
+}
+
+const langToggleBtn = document.getElementById('langToggle');
+if (langToggleBtn) {
+    langToggleBtn.addEventListener('click', () => {
+        currentLang = currentLang === 'id' ? 'en' : 'id';
+        localStorage.setItem('portfolioLang', currentLang);
+        updateContent();
     });
 }
+
+// Initial load
+document.addEventListener('DOMContentLoaded', updateContent);
