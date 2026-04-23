@@ -112,8 +112,8 @@
                         <span data-t="hero.cta">Lihat Karya</span>
                         <div class="btn-circle">→</div>
                     </a>
-                    <button class="btn-outline" id="btn-unduh-cv"
-                        style="background: transparent; color: var(--text); border: 1px solid var(--accent); cursor: pointer; display: inline-flex; align-items: center; gap: 8px;">
+                    <a class="btn-outline" href="./CV_Septiyan Bintang Ramadhan Putra.pdf" download="CV_Septiyan_Bintang_Ramadhan_Putra.pdf"
+                        style="background: transparent; color: var(--text); border: 1px solid var(--accent); cursor: pointer; display: inline-flex; align-items: center; gap: 8px; text-decoration: none;">
                         <span data-t="hero.cv">Unduh CV</span>
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -121,7 +121,7 @@
                             <polyline points="7 10 12 15 17 10"></polyline>
                             <line x1="12" y1="15" x2="12" y2="3"></line>
                         </svg>
-                    </button>
+                    </a>
                 </div>
             </div>
 
@@ -699,198 +699,6 @@
             <button class="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">↑</button>
         </div>
     </footer>
-
-    <!-- CV Template for PDF Export -->
-    <div id="cv-wrapper" style="display: none;">
-        <div id="cv-content"
-            style="width: 210mm; height: 296mm; overflow: hidden; background: #ffffff; color: #1e293b; font-family: 'Plus Jakarta Sans', sans-serif; box-sizing: border-box; line-height: 1.3; padding: 0; margin: 0; position: relative;">
-
-            <!-- Header with accent background -->
-            <div
-                style="background: #0f172a; color: #f8fafc; padding: 7mm 14mm; display: table; width: 100%; table-layout: fixed; box-sizing: border-box;">
-                <!-- Photo -->
-                <div style="display: table-cell; width: 32mm; vertical-align: middle;">
-                    <div
-                        style="width: 30mm; height: 30mm; border-radius: 50%; overflow: hidden; border: 2px solid #6C63FF; display: inline-block;">
-                        <img src="../images/formal.png"
-                            style="width: 100%; height: 100%; object-fit: cover; display: block;" alt="Foto Formal">
-                    </div>
-                </div>
-                <!-- Info -->
-                <div style="display: table-cell; vertical-align: middle; padding-left: 0mm;">
-                    <h1
-                        style="margin: 0 0 1.5mm 0; font-size: 20pt; font-weight: 800; color: #ffffff; letter-spacing: -0.5px;">
-                        Septiyan Bintang Ramadhan Putra</h1>
-                    <h2
-                        style="margin: 0 0 0 0; font-size: 9.5pt; font-weight: 600; color: #6C63FF; text-transform: uppercase; letter-spacing: 1px;">
-                        Flutter Mobile & Web Developer</h2>
-                    <div style="font-size: 8pt; color: #94a3b8; letter-spacing: 0.2px; line-height: 1.4;">
-                        <span style="font-weight: 600; color: #cbd5e1;">📞</span> +62 838-4728-8793 &nbsp;|&nbsp;
-                        <span style="font-weight: 600; color: #cbd5e1;">📍</span> Bondowoso, Jawa Timur<br>
-                        <span style="font-weight: 600; color: #cbd5e1;">🐙</span> github.com/rexx-gif &nbsp;|&nbsp;
-                        <span style="font-weight: 600; color: #cbd5e1;">🌐</span>
-                        septiyan-bintang-ramadhan-putra.vercel.app<br>
-                        <span style="font-weight: 600; color: #cbd5e1;">💼</span>
-                        linkedin.com/in/septiyan-bintang-ramadhan-putra-365a4b403
-                    </div>
-                </div>
-            </div>
-
-            <!-- Body -->
-            <div style="padding: 4mm 14mm 6mm 14mm;">
-
-                <!-- Profil Singkat -->
-                <div style="margin-bottom: 3.5mm;">
-                    <h3
-                        style="margin: 0 0 1.5mm 0; font-size: 10pt; font-weight: 700; color: #0f172a; text-transform: uppercase; padding-bottom: 0.5mm; border-bottom: 2px solid #6C63FF; display: inline-block;">
-                        Profil Singkat</h3>
-                    <p style="margin: 0; font-size: 8.5pt; color: #475569; text-align: justify; line-height: 1.45;">
-                        Siswa SMK RPL yang berdedikasi di bidang Flutter Mobile Development dan Web Development.
-                        Berpengalaman membangun aplikasi menggunakan Laravel, Flutter, dan Figma. Meraih Juara 1 Web
-                        Design Competition tingkat universitas. Sangat termotivasi dan terbuka untuk kesempatan PKL di
-                        bidang Web Development / IT guna berkontribusi nyata dan meningkatkan keahlian ke tingkat
-                        profesional.</p>
-                </div>
-
-                <!-- Proyek & Pengalaman -->
-                <div style="margin-bottom: 3.5mm;">
-                    <h3
-                        style="margin: 0 0 1.5mm 0; font-size: 10pt; font-weight: 700; color: #0f172a; text-transform: uppercase; padding-bottom: 0.5mm; border-bottom: 2px solid #6C63FF; display: inline-block;">
-                        Proyek & Pengalaman</h3>
-
-                    <div style="margin-bottom: 2.5mm;">
-                        <div style="font-size: 9.5pt; font-weight: 700; color: #1e293b;">Sistem Manajemen Perpustakaan
-                            <span
-                                style="font-size: 7pt; font-weight: 600; color: #ffffff; background: #6C63FF; padding: 0.5mm 2mm; border-radius: 3px; margin-left: 1mm; vertical-align: middle;">Web
-                                App</span>
-                        </div>
-                        <div style="font-size: 7.5pt; font-weight: 600; color: #64748b; margin-top: 0.5mm;">Tech:
-                            Laravel, MySQL, Tailwind CSS &nbsp;|&nbsp; Link: github.com/rexx-gif/Perpustakaan</div>
-                        <ul
-                            style="margin: 0.5mm 0 0 0; padding-left: 14px; font-size: 8.5pt; color: #475569; line-height: 1.4;">
-                            <li style="margin-bottom: 0.5mm;">Mengembangkan sistem informasi perpustakaan sekolah dengan
-                                fitur peminjaman, pengembalian, dan inventarisasi buku.</li>
-                            <li style="margin-bottom: 0.5mm;">Menerapkan autentikasi multi-role (admin & anggota),
-                                dashboard statistik, dan notifikasi keterlambatan.</li>
-                            <li>Merancang UI responsif dengan pendekatan mobile-first.</li>
-                        </ul>
-                    </div>
-
-                    <div style="margin-bottom: 2.5mm;">
-                        <div style="font-size: 9.5pt; font-weight: 700; color: #1e293b;">NusaTripNow <span
-                                style="font-size: 7pt; font-weight: 600; color: #ffffff; background: #6C63FF; padding: 0.5mm 2mm; border-radius: 3px; margin-left: 1mm; vertical-align: middle;">Web
-                                App</span></div>
-                        <div style="font-size: 7.5pt; font-weight: 600; color: #64748b; margin-top: 0.5mm;">Tech:
-                            Laravel, Tailwind CSS, MySQL &nbsp;|&nbsp; Link: github.com/rexx-gif/NusaTripNow</div>
-                        <ul
-                            style="margin: 0.5mm 0 0 0; padding-left: 14px; font-size: 8.5pt; color: #475569; line-height: 1.4;">
-                            <li style="margin-bottom: 0.5mm;">Membangun platform reservasi wisata lokal dengan sistem
-                                booking terintegrasi dan manajemen destinasi.</li>
-                            <li style="margin-bottom: 0.5mm;">Mengoptimalkan query database untuk performa pencarian dan
-                                filter kategori wisata.</li>
-                            <li>Mengimplementasikan desain responsif untuk desktop, tablet, dan mobile.</li>
-                        </ul>
-                    </div>
-
-                    <div style="margin-bottom: 2.5mm;">
-                        <div style="font-size: 9.5pt; font-weight: 700; color: #1e293b;">Locallius — E-Commerce Warung
-                            Nusantara <span
-                                style="font-size: 7pt; font-weight: 600; color: #ffffff; background: #6C63FF; padding: 0.5mm 2mm; border-radius: 3px; margin-left: 1mm; vertical-align: middle;">Web
-                                App</span></div>
-                        <div style="font-size: 7.5pt; font-weight: 600; color: #64748b; margin-top: 0.5mm;">Tech:
-                            Laravel, Tailwind CSS, MySQL &nbsp;|&nbsp; Link: github.com/rexx-gif/Locallius</div>
-                        <ul
-                            style="margin: 0.5mm 0 0 0; padding-left: 14px; font-size: 8.5pt; color: #475569; line-height: 1.4;">
-                            <li style="margin-bottom: 0.5mm;">Merancang platform e-commerce untuk digitalisasi warung
-                                tradisional.</li>
-                            <li style="margin-bottom: 0.5mm;">Mengimplementasikan fitur manajemen produk, keranjang
-                                belanja, checkout, dan riwayat transaksi.</li>
-                            <li>Dikembangkan sebagai open-source project dengan dokumentasi terstruktur.</li>
-                        </ul>
-                    </div>
-
-                    <div style="margin-bottom: 0;">
-                        <div style="font-size: 9.5pt; font-weight: 700; color: #1e293b;">ElectroEase <span
-                                style="font-size: 7pt; font-weight: 600; color: #ffffff; background: #6C63FF; padding: 0.5mm 2mm; border-radius: 3px; margin-left: 1mm; vertical-align: middle;">Mobile
-                                App</span></div>
-                        <div style="font-size: 7.5pt; font-weight: 600; color: #64748b; margin-top: 0.5mm;">Tech:
-                            Flutter, Dart &nbsp;|&nbsp; Link: github.com/rexx-gif/ElectroEase</div>
-                        <ul
-                            style="margin: 0.5mm 0 0 0; padding-left: 14px; font-size: 8.5pt; color: #475569; line-height: 1.4;">
-                            <li style="margin-bottom: 0.5mm;">Membangun prototype aplikasi mobile pemesanan alat
-                                elektronik.</li>
-                            <li>Menerapkan UI/UX modern dengan animasi transisi dan state management.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Bottom 2 columns -->
-                <div style="display: table; width: 100%; table-layout: fixed;">
-                    <div style="display: table-cell; width: 50%; padding-right: 4mm; vertical-align: top;">
-                        <h3
-                            style="margin: 0 0 1.5mm 0; font-size: 10pt; font-weight: 700; color: #0f172a; text-transform: uppercase; padding-bottom: 0.5mm; border-bottom: 2px solid #6C63FF; display: inline-block;">
-                            Pendidikan & Akademik</h3>
-                        <div style="font-weight: 700; font-size: 9pt; color: #1e293b; margin-top: 1mm;">SMKN 1 Bondowoso
-                        </div>
-                        <div style="font-size: 8.5pt; color: #475569;">Rekayasa Perangkat Lunak (RPL) <br><span
-                                style="font-size: 7.5pt; color: #64748b; font-weight: 600;">2024 — 2025</span></div>
-
-                        <h3
-                            style="margin: 3.5mm 0 1.5mm 0; font-size: 10pt; font-weight: 700; color: #0f172a; text-transform: uppercase; padding-bottom: 0.5mm; border-bottom: 2px solid #6C63FF; display: inline-block;">
-                            Sertifikat & Penghargaan</h3>
-                        <div style="font-size: 8.5pt; color: #475569; margin-bottom: 1.5mm; line-height: 1.35;">
-                            <span
-                                style="font-size: 7pt; font-weight: 700; color: #ffffff; background: #10b981; padding: 0.5mm 1.5mm; border-radius: 3px; display: inline-block; margin-bottom: 1px;">JUARA
-                                1</span><br>
-                            <strong>Web Design Competition</strong> — Universitas Muhammadiyah Jember (Innotech 2025)
-                        </div>
-                        <div style="font-size: 8.5pt; color: #475569; margin-bottom: 1.5mm; line-height: 1.35;">
-                            <span
-                                style="font-size: 7pt; font-weight: 700; color: #ffffff; background: #64748b; padding: 0.5mm 1.5mm; border-radius: 3px; display: inline-block; margin-bottom: 1px;">Peserta</span><br>
-                            <strong>UI/UX Competition (ISAC)</strong> — HIMSI Universitas Airlangga 2025
-                        </div>
-                        <div style="font-size: 8.5pt; color: #475569; line-height: 1.35;">
-                            <span
-                                style="font-size: 7pt; font-weight: 700; color: #ffffff; background: #64748b; padding: 0.5mm 1.5mm; border-radius: 3px; display: inline-block; margin-bottom: 1px;">Peserta</span><br>
-                            <strong>Pelatihan IT (LATIKA)</strong> — Dinas Pendidikan Provinsi Jawa Timur 2025
-                        </div>
-                    </div>
-
-                    <div style="display: table-cell; width: 50%; padding-left: 4mm; vertical-align: top;">
-                        <h3
-                            style="margin: 0 0 1.5mm 0; font-size: 10pt; font-weight: 700; color: #0f172a; text-transform: uppercase; padding-bottom: 0.5mm; border-bottom: 2px solid #6C63FF; display: inline-block;">
-                            Keahlian Teknis</h3>
-                        <div style="margin-top: 1mm;">
-                            <div style="margin-bottom: 1.5mm;">
-                                <span
-                                    style="font-weight: 700; font-size: 8.5pt; color: #1e293b; display: block; margin-bottom: 0.5mm;">Frontend</span>
-                                <div style="font-size: 8pt; color: #475569;">HTML5, CSS3, JavaScript, Flutter, Tailwind
-                                    CSS</div>
-                            </div>
-                            <div style="margin-bottom: 1.5mm;">
-                                <span
-                                    style="font-weight: 700; font-size: 8.5pt; color: #1e293b; display: block; margin-bottom: 0.5mm;">Backend</span>
-                                <div style="font-size: 8pt; color: #475569;">PHP, Laravel, MySQL, Python</div>
-                            </div>
-                            <div style="margin-bottom: 1.5mm;">
-                                <span
-                                    style="font-weight: 700; font-size: 8.5pt; color: #1e293b; display: block; margin-bottom: 0.5mm;">UI/UX
-                                    Design</span>
-                                <div style="font-size: 8pt; color: #475569;">Figma</div>
-                            </div>
-                            <div>
-                                <span
-                                    style="font-weight: 700; font-size: 8.5pt; color: #1e293b; display: block; margin-bottom: 0.5mm;">Development
-                                    Tools</span>
-                                <div style="font-size: 8pt; color: #475569;">Git, GitHub, VS Code</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
     <script src="../js/script.js"></script>
 </body>
 
