@@ -432,7 +432,7 @@ if (btnUnduhCv) {
             
             const opt = {
                 margin:       0,
-                filename:     'CV_Septiyan_Bintang.pdf',
+                filename:     'CV_Septiyan_Bintang_Ramadhan_Putra.pdf',
                 image:        { type: 'jpeg', quality: 0.98 },
                 html2canvas:  { scale: 2, useCORS: true, scrollY: 0 },
                 jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
