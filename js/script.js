@@ -387,3 +387,67 @@ if (langToggleBtn) {
 
 // Initial load
 document.addEventListener('DOMContentLoaded', updateContent);
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━
+   DOWNLOAD CV (PDF)
+━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+const btnUnduhCv = document.getElementById('btn-unduh-cv');
+if (btnUnduhCv) {
+    btnUnduhCv.addEventListener('click', (e) => {
+        e.preventDefault();
+        
+        const originalText = btnUnduhCv.innerHTML;
+        btnUnduhCv.innerHTML = '<span data-t="hero.cv">Memproses... ⏳</span>';
+        btnUnduhCv.disabled = true;
+        
+        // 1) Buat iframe tersembunyi agar CSS global website tidak ikut campur
+        const iframe = document.createElement('iframe');
+        iframe.style.cssText = 'position:fixed;top:0;left:0;width:210mm;height:297mm;opacity:0;pointer-events:none;z-index:-1;border:none;';
+        document.body.appendChild(iframe);
+        
+        const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+        
+        // 2) Tulis ulang konten CV ke dalam iframe yang bersih (tanpa CSS external)
+        const cvHTML = document.getElementById('cv-content').outerHTML;
+        // Load font yang sama
+        iframeDoc.open();
+        iframeDoc.write(`
+            <!DOCTYPE html>
+            <html>
+            <head>
+                <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+                <style>
+                    * { margin: 0; padding: 0; box-sizing: border-box; }
+                    body { margin: 0; padding: 0; background: #fff; }
+                </style>
+            </head>
+            <body>${cvHTML}</body>
+            </html>
+        `);
+        iframeDoc.close();
+        
+        // 3) Tunggu font selesai load sebelum render
+        setTimeout(() => {
+            const cvInIframe = iframeDoc.getElementById('cv-content');
+            
+            const opt = {
+                margin:       0,
+                filename:     'CV_Septiyan_Bintang.pdf',
+                image:        { type: 'jpeg', quality: 0.98 },
+                html2canvas:  { scale: 2, useCORS: true, scrollY: 0 },
+                jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
+            };
+
+            html2pdf().set(opt).from(cvInIframe).save().then(() => {
+                btnUnduhCv.innerHTML = originalText;
+                btnUnduhCv.disabled = false;
+                document.body.removeChild(iframe);
+            }).catch(err => {
+                console.error('Error generating PDF:', err);
+                btnUnduhCv.innerHTML = originalText;
+                btnUnduhCv.disabled = false;
+                document.body.removeChild(iframe);
+            });
+        }, 500);
+    });
+}
